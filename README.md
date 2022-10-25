@@ -1,7 +1,7 @@
 # SOEN341-PROJECT
 
 ## Team Members:
-### Name              Git username
+### Name  and Git username
 * Thamina Akther- t-akther
 * Tuan Anh Pham 
 * Hugo Chauschard - hugochsd
