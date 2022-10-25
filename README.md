@@ -1,5 +1,8 @@
 # SOEN341-PROJECT
 
+## Objective
+The goal of this project is to develop a procurement system which automates material acquisition of a business using SQL, React.js and express
+
 ## Team Members:
 ### Name  and Git username
 * Thamina Akther- t-akther
@@ -9,3 +12,6 @@
 * Radwan Baba - Radwanbaba13
 * Lyes Kara
 * Brahim Hamid oudjana
+
+
+
