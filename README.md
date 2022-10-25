@@ -4,7 +4,7 @@
 Name              Git username
 * Thamina Akther- t-akther
 * Tuan Anh Pham 
-* Hugo Chauschard
+* Hugo Chauschard - hugochsd
 * Raphael Leyo
 * Radwan Baba
 * Lyes Kara
