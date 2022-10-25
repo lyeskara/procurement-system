@@ -22,7 +22,7 @@ The goal of this project is to develop a procurement system which automates mate
 * MySQL
 
 ## Get Started
-run the following command 
+run the following command:
 ```Bash
 npm start
 ```
