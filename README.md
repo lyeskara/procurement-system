@@ -21,7 +21,7 @@ The goal of this project is to develop a procurement system which automates mate
 * CSS3/Bootstrap
 * MySQL
 
-# Get Started
+## Get Started
 run the following command 
 ```Bash
 npm start
