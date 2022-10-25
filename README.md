@@ -13,5 +13,12 @@ The goal of this project is to develop a procurement system which automates mate
 * Lyes Kara
 * Brahim Hamid oudjana
 
+## Tecnologies and Tools:
+
+* PHP
+* JavaScript
+* HTML5
+* CSS3/Bootstrap
+* MySQL
 
 
