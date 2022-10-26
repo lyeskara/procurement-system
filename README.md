@@ -15,11 +15,11 @@ The goal of this project is to develop a procurement system which automates mate
 
 ## Tecnologies and Tools:
 
-* PHP
+
 * JavaScript
 * HTML5
 * CSS3/Bootstrap
-* MySQL
+* Postgres
 
 ## Get Started
 From your directory ```SOEN341-PROJECT/frontend```run the following command:
