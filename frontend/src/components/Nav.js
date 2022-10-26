@@ -6,17 +6,8 @@ import { BsSearch } from "react-icons/bs";
 function nav() {
   return (
    <nav>
-    <h1><Link to="/About" id='link'>Procurement</Link></h1>
-    <form action="/" method="get">
-    
-        <input
-            type="text"
-            id="header-search"
-            placeholder="Search Here"
-            name="s" 
-        />
-        <button type="submit"> <BsSearch/> </button>
-    </form>
+    <h1><Link to="/" id='link'>Procurement</Link></h1>
+
     <ul>
     <li><Link to="/inventory"  id='link'>Inventory</Link></li>
     <li> <Link to="/login"  id='link'>Login</Link> </li>
