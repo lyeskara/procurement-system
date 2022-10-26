@@ -27,9 +27,7 @@ return (
   )}
     </div>
     
-    <div>
-      <h2>inventory</h2>
-    </div>
+ 
     
     
     </>
