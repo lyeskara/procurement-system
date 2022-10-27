@@ -21,10 +21,5 @@ The goal of this project is to develop a procurement system which automates mate
 * CSS3/Bootstrap
 * Postgres
 
-## Get Started
-From your directory ```SOEN341-PROJECT/frontend```run the following command:
-```Bash
-npm start
-```
 
 
