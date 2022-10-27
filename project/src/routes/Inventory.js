@@ -5,6 +5,8 @@ import axios from 'axios';
 function Inventory() {
  
   const [quest,setquest]= useState([]);
+  
+  
   useEffect(()=>{
     axios.get("http://localhost:5000/clients").then((Response)=>{
       setquest(Response.data)

@@ -1,7 +1,6 @@
 const express = require('express');
 const app = new express();
 const cors= require('cors');
-const supabase = require('./supabase')
 app.use(cors());
 app.use(express.json())
 
@@ -9,8 +8,9 @@ app.use(express.json())
 app.get("/clients", (req,res)=>{
     const people = [{id:50,name:'lyes',surname:'kara'}]
     res.json(people);
-
 })
+
+
 
 
 
