@@ -10,7 +10,7 @@ The goal of this project is to develop a procurement system which automates mate
 * Hugo Chauschard - hugochsd
 * Raphael Leyo
 * Radwan Baba - Radwanbaba13
-* Lyes Kara
+* Lyes Kara- lyeskara
 * Brahim Hamid oudjana
 
 ## Tecnologies and Tools:
@@ -20,6 +20,7 @@ The goal of this project is to develop a procurement system which automates mate
 * HTML5
 * CSS3/Bootstrap
 * Postgres
+
 
 
 
