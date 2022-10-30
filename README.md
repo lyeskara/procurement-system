@@ -6,7 +6,7 @@ The goal of this project is to develop a procurement system which automates mate
 ## Team Members:
 ### Name  and Git username
 * Thamina Akther- t-akther
-* Tuan Anh Pham 
+* Tuan Anh Pham - TuanAnh-P
 * Hugo Chauschard - hugochsd
 * Raphael Leyo
 * Radwan Baba - Radwanbaba13
