@@ -1,8 +1,10 @@
 const express = require('express');
 const app = new express();
 const cors= require('cors');
+
 app.use(cors());
 app.use(express.json())
+
 
 
 app.get("/clients", (req,res)=>{
@@ -10,6 +12,8 @@ app.get("/clients", (req,res)=>{
     res.json(people);
 })
 
+const login = require('./serverRouting/LogAuth');
+app.post('auth/register',login);
 
 
 
