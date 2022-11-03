@@ -1,4 +1,7 @@
 import React from 'react';
+import {add_to_asset_bucket, list_buckets} from './test_image_population/image_populator'
+import {fetch_single_entry, fetch_whole_table} from './test_image_population/table_populator'
+
 import {
     Routes,
     Route,
@@ -11,8 +14,16 @@ import Login from './routes/Login';
 import Home from './routes/Home';
 import About from './routes/About';
 
+
 import app from './componentCSS/app.css'
 const App = ()=>{
+    console.log("supabase testing start");
+    fetch_single_entry();
+    fetch_whole_table();
+    list_buckets();
+    add_to_asset_bucket();
+    console.log("supabase testing ends");
+
     return (   
        <>
  <Nav/>  
@@ -28,4 +39,7 @@ const App = ()=>{
     )
 }
 
+
+
 export default App;
+
