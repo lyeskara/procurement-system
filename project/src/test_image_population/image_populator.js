@@ -35,7 +35,7 @@ export const add_to_asset_bucket = async () => {
         const {data, error} = await supabase
             .storage
             .from("assets")
-            .upload("cannon.jpg",file,{cacheControl: "3600", upsert:false})
+            .upload("cannon.jpg", file, {cacheControl: "3600", upsert: false})
 
         if (error) {
             console.log(error.code)
@@ -52,4 +52,18 @@ export const add_to_asset_bucket = async () => {
     }
 
 
+}
+
+
+export const find_asset_from_bucket = async () => {
+    console.log("Getting picture from storage")
+
+    const {data} = await supabase
+        .storage
+        .from('assets')
+        .getPublicUrl('product_images/cannon.jpg')
+
+    console.log(data.publicUrl);
+
+    return data.publicUrl;
 }
