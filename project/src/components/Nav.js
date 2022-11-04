@@ -10,6 +10,7 @@ function nav() {
     <ul>
     <li> <Link to="/login"  id='link'>Login</Link> </li>
     <li> <Link to="/About"  id='link'>About</Link> </li>
+
     </ul>
    </nav>
   )
