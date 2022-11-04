@@ -1,39 +1,17 @@
 import React from 'react'
 import {useState , useEffect} from 'react'
-import axios from 'axios';
+import { Link } from "react-router-dom";
 
 function Inventory() {
- 
-  const [quest,setquest]= useState([]);
   
-  
-  useEffect(()=>{
-    axios.get("http://localhost:5000/clients").then((Response)=>{
-      setquest(Response.data)
-    })
- } ,[])
-  
- 
-  return (
-  <>
-  <div>
-  {quest.map((user) => {
-return (
-  <div>
-  <h1> name is {user.id}</h1>
-  <h1>age is {user.name}</h1>
-  <h1>usernmae is {user.surname}</h1>
-  </div>
+return(
+  <ul>
+  <li> <Link to="/users"  >users</Link> </li>
+  <li> <Link to="/orders" >orders</Link> </li>
+  <li> <Link to="/suppliers" >suppliers</Link> </li>
+
+  </ul>
 )
-    }
-  )}
-    </div>
-    
- 
-    
-    
-    </>
-  )
 }
 
 export default Inventory
