@@ -253,6 +253,43 @@ export const generate_entries_of_item_supplier_table = async (supplier_item_tabl
 }
 
 // order table
+export const generate_entries_of_order_table = async (order_table_name, supplier_item_table_name) => {
+    let local_order_table = []
+
+    let item_supplier_table = await fetch_whole_table_asc_by_id(supplier_item_table_name)
+
+    // console.log(item_supplier_table);
+
+    for (const item_supplier_index in item_supplier_table) {
+        local_order_table.push({
+            "item_name": item_supplier_table[item_supplier_index].item_name,
+            "supplier_name": item_supplier_table[item_supplier_index].supplier_name,
+            "quantity": getRandomArbitrary(1, 1000),
+            "fulfillment": getRandomArbitrary(0, 2)
+        })
+    }
+
+    // console.log(local_order_table);
+
+    try {
+
+        // pushing the local order table created with the rows to the remote supabase db
+        // this bulk call will create the rows in the supabase remote table in oneshot
+        const {error} = await supabase
+            .from(order_table_name)
+            .insert(local_order_table)
+
+        if (error) {
+            console.log(error.code)
+            throw error
+        }
+
+    } catch (error) {
+        console.log(error.message)
+    } finally {
+        console.log("finally what to do?")
+    }
+}
 
 
 // trials below
