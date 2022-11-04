@@ -1,5 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import axios from 'axios';
+import '../tables.css/users.css'
+
 function Order() {
 
     const [data,setData] = useState([]);
@@ -13,6 +15,7 @@ function Order() {
     <div>
     
   <div>
+  <h1 id='hh'>Users Table</h1>
 
    <table>
    <thead>
@@ -27,12 +30,14 @@ function Order() {
          {
             data.map((order)=>{
                 return(
+                  <>
                 <tr key={order.id}>
                     <td>{order.item_name}</td>
                     <td>{order.supplier_name}</td>
                     <td>{order.quantity}</td>
-                    <td>{order.fulfillment}</td>
+                    <td>{(order.fulfillment).toString()}</td>
                 </tr>
+                </>
                 )
             })
          } 

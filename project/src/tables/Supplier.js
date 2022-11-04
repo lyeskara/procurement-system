@@ -1,5 +1,6 @@
 import React, {useState,useEffect} from 'react'
 import axios from 'axios';
+import '../tables.css/users.css'
 
 function Supplier() {
     const [data,setData] = useState([]);
@@ -10,9 +11,9 @@ function Supplier() {
         }, []
       );
   return (
-    <div>
     
   <div>
+  <h1 id='hh'>Users Table</h1>
 
    <table>
    <thead>
@@ -41,7 +42,6 @@ function Supplier() {
   </div>
 
  
-    </div>
   )
 }
 
