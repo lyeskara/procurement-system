@@ -1,6 +1,6 @@
 import {supabase} from "../supabaseClient";
 
-export const fetch_single_entry = async () => {
+export const fetch_single_entry = async (table_name,) => {
 
     try {
         let {data, error, status} = await supabase
@@ -24,11 +24,11 @@ export const fetch_single_entry = async () => {
     }
 }
 
-export const fetch_whole_table = async () => {
+export const fetch_whole_table = async (table_name) => {
 
     try {
         let {data, error} = await supabase
-            .from('Item')
+            .from(table_name)
             .select()
 
         if (error) {
@@ -37,7 +37,10 @@ export const fetch_whole_table = async () => {
         }
 
         if (data) {
-            console.log(data)
+            // console.log(data)
+            return data
+        } else {
+            return null
         }
     } catch (error) {
         console.log(error.message)
