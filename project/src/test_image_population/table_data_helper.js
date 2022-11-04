@@ -24,12 +24,13 @@ export const fetch_single_entry = async (table_name,) => {
     }
 }
 
-export const fetch_whole_table = async (table_name) => {
+export const fetch_whole_table_asc_by_id = async (table_name) => {
 
     try {
         let {data, error} = await supabase
             .from(table_name)
             .select()
+            .order("id", {ascending: true})
 
         if (error) {
             console.log(error.code)

@@ -29,6 +29,11 @@ const App = () => {
     if (GENERATE_TABLE_ENTRIES) {
         generate_entries_of_item_table_from_images("Item_t");
         generate_entries_of_supplier_table("supplier_t");
+
+        generate_entries_of_item_supplier_table("item_supplier", "Item", "supplier", 0)
+        // generate_entries_of_item_supplier_table("item_supplier_t", "Item_t", "supplier_t", 1)
+
+
     }
     console.log("supabase testing ends");
 

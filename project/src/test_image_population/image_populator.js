@@ -1,6 +1,8 @@
 // async call reference: https://stackoverflow.com/questions/49982058/how-to-call-an-async-function
 
 import {supabase} from "../supabaseClient";
+import {fetch_whole_table_asc_by_id} from "./table_data_helper";
+
 
 function getRandomArbitrary(min, max) {
     return Math.floor(Math.abs(Math.random() * (max - min) + min));
@@ -171,6 +173,87 @@ export const generate_entries_of_supplier_table = async (table_name) => {
 
 }
 
+// item supplier table
+export const generate_entries_of_item_supplier_table = async (supplier_item_table_name, item_table_name, supplier_table_name, t) => {
+
+    let local_item_supplier_table = []
+
+    // fetch two tables - NOTE: Assuming the tables are fetched by the id ordered in ascending order
+    let item_table_list = await fetch_whole_table_asc_by_id(item_table_name)
+    let supplier_table_list = await fetch_whole_table_asc_by_id(supplier_table_name)
+
+    let max_id_of_item_table = item_table_list[item_table_list.length - 1].id
+    let min_id_of_item_table = item_table_list[0].id
+
+    let max_id_of_supplier_table = supplier_table_list[supplier_table_list.length - 1].id
+    let min_id_of_supplier_table = supplier_table_list[0].id
+
+
+    if (0) {
+        console.log(item_table_list);
+        console.log(min_id_of_item_table);
+        console.log(max_id_of_item_table);
+
+        console.log(supplier_table_list);
+        console.log(min_id_of_supplier_table);
+        console.log(max_id_of_supplier_table);
+    }
+
+    // Generate a random number of items between 1 to 4 items - supplied by each supplier
+    // The items supplied by each supplier is also randomly selected
+    if (t) {
+        // item_supplier_t table
+
+        for (const supplier_index in supplier_table_list) {
+            // console.log(supplier_table_list[supplier_index].id);
+            let number_of_items_supplier_supplies = getRandomArbitrary(1, 4)
+            for (let i = 0; i < number_of_items_supplier_supplies; i++) {
+                local_item_supplier_table.push({
+                    "supplier_id": supplier_table_list[supplier_index].id,
+                    "item_id": getRandomArbitrary(min_id_of_item_table, max_id_of_item_table)
+                })
+            }
+        }
+        console.log(local_item_supplier_table);
+    } else {
+        // item_supplier table
+
+        for (const supplier_index in supplier_table_list) {
+            // console.log(supplier_table_list[supplier_index].id);
+            let number_of_items_supplier_supplies = getRandomArbitrary(1, 1)
+            for (let i = 0; i < number_of_items_supplier_supplies; i++) {
+                local_item_supplier_table.push({
+                    "supplier_name": supplier_table_list[supplier_index].supplier_name,
+                    "item_name": item_table_list[getRandomArbitrary(0, item_table_list.length)].item_name
+                })
+            }
+        }
+        console.log(local_item_supplier_table);
+    }
+
+    try {
+
+        // pushing the local item_supplier table created with the rows to the remote supabase db
+        // this bulk call will create the rows in the supabase remote table in oneshot
+        const {error} = await supabase
+            .from(supplier_item_table_name)
+            .insert(local_item_supplier_table)
+
+        if (error) {
+            console.log(error.code)
+            throw error
+        }
+
+    } catch (error) {
+        console.log(error.message)
+    } finally {
+        console.log("finally what to do?")
+    }
+
+}
+
+// order table
+
 
 // trials below
 
@@ -188,34 +271,34 @@ export const generate_entries_of_supplier_table = async (table_name) => {
 //
 // }
 
-export const add_to_asset_bucket = async () => {
-    try {
-        console.log("Uploading picture to storage")
-
-        let file = new FileReader();
-        file.r("../../assets/cannon.jpg");
-
-        const {data, error} = await supabase
-            .storage
-            .from("assets")
-            .upload("cannon.jpg", file, {cacheControl: "3600", upsert: false})
-
-        if (error) {
-            console.log(error.code)
-            throw error
-        }
-
-        if (data) {
-            console.log(data)
-        }
-    } catch (error) {
-        console.log(error.message)
-    } finally {
-        console.log("finally what to do?")
-    }
-
-
-}
+// export const add_to_asset_bucket = async () => {
+//     try {
+//         console.log("Uploading picture to storage")
+//
+//         let file = new FileReader();
+//         file.r("../../assets/cannon.jpg");
+//
+//         const {data, error} = await supabase
+//             .storage
+//             .from("assets")
+//             .upload("cannon.jpg", file, {cacheControl: "3600", upsert: false})
+//
+//         if (error) {
+//             console.log(error.code)
+//             throw error
+//         }
+//
+//         if (data) {
+//             console.log(data)
+//         }
+//     } catch (error) {
+//         console.log(error.message)
+//     } finally {
+//         console.log("finally what to do?")
+//     }
+//
+//
+// }
 
 
 //
