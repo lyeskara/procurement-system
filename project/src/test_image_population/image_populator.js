@@ -138,7 +138,38 @@ export const generate_entries_of_item_table_from_images = async (table_name) => 
 }
 
 
+// supplier table
 
+let suppliers = [
+    "Apple", "Amazon Basics", "Ecobee", "Air Bus", "Vivo", "UGreen", "Wallmart", "Samsung", "Cannon", "Epson", "Lenevo", "IBM", "Cisco", "Tim Hortons", "Axio"
+]
+
+export const generate_entries_of_supplier_table = async (table_name) => {
+
+    let local_supplier_table = [] // declaring local supplier table
+    for (const supplier_index in suppliers) {
+        local_supplier_table.push({"supplier_name": suppliers[supplier_index]})
+    }
+    try {
+
+        // pushing the local supplier table created with the rows to the remote supabase db
+        // this bulk call will create the rows in the supabase remote table in oneshot
+        const {error} = await supabase
+            .from(table_name)
+            .insert(local_supplier_table)
+
+        if (error) {
+            console.log(error.code)
+            throw error
+        }
+
+    } catch (error) {
+        console.log(error.message)
+    } finally {
+        console.log("finally what to do?")
+    }
+
+}
 
 
 // trials below

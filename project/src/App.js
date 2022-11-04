@@ -1,7 +1,7 @@
 // async call reference: https://stackoverflow.com/questions/49982058/how-to-call-an-async-function
 import React from 'react';
 import {
-    generate_entries_of_item_table_from_images,
+    generate_entries_of_item_table_from_images, generate_entries_of_supplier_table,
 } from './test_image_population/image_populator'
 
 import {
@@ -28,6 +28,7 @@ const App = () => {
 
     if (GENERATE_TABLE_ENTRIES) {
         generate_entries_of_item_table_from_images("Item_t");
+        generate_entries_of_supplier_table("supplier_t");
     }
     console.log("supabase testing ends");
 
