@@ -3,6 +3,8 @@ import { useState,useEffect } from 'react'
 import '../componentCSS/login.css'
 import axios from 'axios';
 import { useNavigate } from "react-router-dom";
+import { redirect } from "react-router-dom";
+
 
 
 function setCookie(cname, cvalue, exdays) {
@@ -46,7 +48,7 @@ function Login() {
 
 
 function login(){
-    const  url = "http://localhost:5000/login/";
+    const  url = "http://localhost:8000/login/";
     axios.get(`${url}?email=${email}&password=${password}`).then((responce)=>{
 
     if (responce.data[0] === undefined){
@@ -66,7 +68,10 @@ console.log('line 64 isLoggedin: ' + checkCookie('is_logged_in'))
 
     useEffect(()=>{
         if (IsLoggedIn) {
-        navigate("/")}
+            //return navigate("/")
+
+            window.location.href = 'http://localhost:3000/'; // redirect home
+            }
 }, [IsLoggedIn])
 
     return (
@@ -99,7 +104,7 @@ console.log('line 64 isLoggedin: ' + checkCookie('is_logged_in'))
                         </>)
                 } else  {
                     return (
-                        <div>"logged in"</div>
+                         <div>"logged in "</div>
                 )
                 }
             })()}
