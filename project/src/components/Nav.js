@@ -7,16 +7,16 @@ import { useState,useEffect } from 'react'
 
 
 function Nav() {
-const [IsLoggedIn, setIsLoggedIn] = useState(checkCookie('is_logged_in'));
-
-    useEffect(()=>{
-    }, [IsLoggedIn])
+// const [IsLoggedIn, setIsLoggedIn] = useState(checkCookie('is_logged_in'));
+//
+//     useEffect(()=>{
+//     }, [IsLoggedIn])
 
 
 function logout(){
   removeCookie('is_logged_in')
-    setIsLoggedIn(checkCookie('is_logged_in'))
-
+    // setIsLoggedIn(checkCookie('is_logged_in'))
+    window.location.reload();
 }
 
 function checkCookie(name) {
@@ -38,6 +38,7 @@ if (match) {
   document.cookie = name + "=" +
       ";expires=Thu, 01 Jan 1970 00:00:01 GMT";
 }
+
 else{
   console.log('Cookie already removed.');
 }
@@ -52,7 +53,9 @@ else{
           return (<li> <Link to="/login"  id='link'>Login</Link> </li>)
         } else  {
           return (
+              <>
               <li> <Link onClick={logout} id='link'> Logout </Link></li>
+              </>
           )
         }
       })()}
@@ -63,4 +66,3 @@ else{
 }
 
 export default Nav
-
