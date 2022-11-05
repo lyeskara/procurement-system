@@ -19,6 +19,16 @@ app.get('/order',Us.Orders);
 app.get('/order/:id',Us.order);
 
 
+app.get("/login",  (req, res) => {
+    const email = req.query.email;
+    const password = req.query.password;
+    login.Login( email , password, returnData);
+
+    function returnData(data){
+        res.json(data)}
+
+})
+
 app.listen(5000, ()=> {
     console.log('backend working')
 })
