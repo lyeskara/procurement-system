@@ -16,17 +16,17 @@ import Inventory from './routes/Inventory';
 import Login from './routes/Login';
 import Home from './routes/Home';
 import About from './routes/About';
+import User from './tables/User';
 import Db_pop from './routes/populate_db';
-
-
 import app from './componentCSS/app.css'
+import Order from './tables/Order';
+import Supplier from './tables/Supplier';
 
 let GENERATE_TABLE_ENTRIES = 0; //to generate db data using the generation functions below change 0 to 1
 
-const App = () => {
+const App = ()=>{
 
     console.log("supabase testing start");
-
     if (GENERATE_TABLE_ENTRIES) {
         // generate_entries_of_item_supplier_table("item_supplier_t", "Item_t", "supplier_t", 1)
 
@@ -37,19 +37,23 @@ const App = () => {
     }
     console.log("supabase testing ends");
 
-    return (
-        <>
-            <Nav/>
+    return (   
+       <>
+ <Nav/> 
+ <Routes>
+    <Route path ="/" element={<Home/>}  />
+    <Route path ="/About" element={<About/>}  />
+    <Route path ="/inventory" element={<Inventory/>}  />
+    <Route path ="/login" element={<Login/>}  />
+    <Route path ="/orders" element={<Order/>}  />
+    <Route path ="/users" element={<User/>}  />
+    <Route path ="/suppliers" element={<Supplier/>}  />
 
-            <Routes>
-                <Route path="/" element={<Home/>}/>
-                <Route path="/About" element={<About/>}/>
-                <Route path="/inventory" element={<Inventory/>}/>
-                <Route path="/login" element={<Login/>}/>
-            </Routes>
-            <Footer/>
-        </>
 
+
+ </Routes>
+ </>
+    
     )
 }
 

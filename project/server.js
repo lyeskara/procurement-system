@@ -7,16 +7,27 @@ app.use(express.json())
 
 
 
-app.get("/clients", (req,res)=>{
-    const people = [{id:50,name:'lyes',surname:'kara'}]
-    res.json(people);
+const  Us = require('./serverRouting/GetAll');
+
+app.get('/Users',Us.Users);
+app.get('/Users/:id',Us.User);
+
+app.get('/supplier',Us.suppliers);
+app.get('/supplier/:id',Us.supplier);
+
+app.get('/order',Us.Orders);
+app.get('/order/:id',Us.order);
+
+
+app.get("/login",  (req, res) => {
+    const email = req.query.email;
+    const password = req.query.password;
+    login.Login( email , password, returnData);
+
+    function returnData(data){
+        res.json(data)}
+
 })
-
-const login = require('./serverRouting/LogAuth');
-app.post('auth/register',login);
-
-
-
 
 app.listen(5000, ()=> {
     console.log('backend working')

@@ -1,39 +1,19 @@
 import React from 'react'
 import {useState , useEffect} from 'react'
-import axios from 'axios';
-
+import { Link } from "react-router-dom";
+import '../componentCSS/inventory.css'
 function Inventory() {
- 
-  const [quest,setquest]= useState([]);
   
-  
-  useEffect(()=>{
-    axios.get("http://localhost:5000/clients").then((Response)=>{
-      setquest(Response.data)
-    })
- } ,[])
-  
- 
-  return (
+return(
   <>
-  <div>
-  {quest.map((user) => {
-return (
-  <div>
-  <h1> name is {user.id}</h1>
-  <h1>age is {user.name}</h1>
-  <h1>usernmae is {user.surname}</h1>
+  <h1 id='h'>Inventory</h1>
+  <div id='choices'>
+  <button> <Link to="/users"  id='link'>users</Link> </button>
+  <button> <Link to="/orders" id='link'>orders</Link> </button>
+  <button> <Link to="/suppliers" id='link'>suppliers</Link> </button>
   </div>
+  </>
 )
-    }
-  )}
-    </div>
-    
- 
-    
-    
-    </>
-  )
 }
 
 export default Inventory
