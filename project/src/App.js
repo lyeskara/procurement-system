@@ -21,20 +21,19 @@ import Db_pop from './routes/populate_db';
 
 import app from './componentCSS/app.css'
 
-let GENERATE_TABLE_ENTRIES = 0;
+let GENERATE_TABLE_ENTRIES = 0; //to generate db data using the generation functions below change 0 to 1
 
 const App = () => {
 
     console.log("supabase testing start");
 
     if (GENERATE_TABLE_ENTRIES) {
-        // generate_entries_of_item_table_from_images("Item_t");
-        // generate_entries_of_supplier_table("supplier_t");
-
-        // generate_entries_of_item_supplier_table("item_supplier", "Item", "supplier", 0)
         // generate_entries_of_item_supplier_table("item_supplier_t", "Item_t", "supplier_t", 1)
-        generate_entries_of_order_table("orders", "item_supplier")
 
+        generate_entries_of_item_table_from_images("Item");
+        generate_entries_of_supplier_table("supplier");
+        generate_entries_of_item_supplier_table("item_supplier", "Item", "supplier", 0)
+        generate_entries_of_order_table("orders", "item_supplier")
     }
     console.log("supabase testing ends");
 

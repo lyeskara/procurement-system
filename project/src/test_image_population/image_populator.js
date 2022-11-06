@@ -101,10 +101,12 @@ export const generate_entries_of_item_table_from_images = async (table_name) => 
             let image_url_info = get_public_url_of_a_image_from_supabase_storage_using_image_name(images_info_list[image_index].name)
             // image_url_list.push(image_url_info.publicUrl)
 
+            let raw_file_name = (images_info_list[image_index].name)
+            let filename = raw_file_name.substring(0, raw_file_name.indexOf('.'))
 
             // here we are creating the rows of the items table and temporarily storing it into the local items table list
             local_item_table.push({
-                item_name: images_info_list[image_index].name,
+                item_name: filename,
                 "item_price": getRandomArbitrary(5, 200),
                 "product_image": image_url_info.publicUrl
             })
