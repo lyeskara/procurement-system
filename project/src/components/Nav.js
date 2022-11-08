@@ -9,6 +9,7 @@ function Nav() {
 
 function logout(){
   removeCookie('is_logged_in')
+  removeCookie('supervisor')
     window.location.reload();
 }
 

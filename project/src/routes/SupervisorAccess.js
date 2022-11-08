@@ -3,11 +3,11 @@ import {Link} from "react-router-dom";
 import {checkCookie} from "../routes/CookieFunction";
 
 
-function Template() {
+function SupervisordAccess() {
     return (
         <>
             {(() => {
-                if (!checkCookie('is_logged_in')) {
+                if (!checkCookie('is_logged_in') && !checkCookie('supervisor')) {
                     return (<div>logged out</div>)
                 } else  {
                     return (

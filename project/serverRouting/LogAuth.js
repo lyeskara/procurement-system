@@ -12,6 +12,7 @@ function Login(email, password, callback){
         }else {
 
             console.log('User found.')
+            console.log(res.rows)
 
             // console.log(data)
             // data.forEach(row => {

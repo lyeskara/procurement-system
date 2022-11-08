@@ -3,7 +3,7 @@ import { useState,useEffect } from 'react'
 import '../componentCSS/login.css'
 import axios from 'axios';
 import { useNavigate } from "react-router-dom";
-import {setCookie, checkCookie, removeCookie, getUserNameCookie} from "../routes/CookieFunction";
+import {setCookie, checkCookie, removeCookie} from "../routes/CookieFunction";
 
 
 function Login() {
@@ -22,7 +22,10 @@ function login(){
         console.log('no')
     }else{
         console.log('Hello, ' + responce.data[0].user_name + '.')
+        console.log('Hello, ' + responce.data[0] + '.')
+
         setCookie('is_logged_in', responce.data[0].user_name, 1)
+        setCookie('supervisor',responce.data[0].supervisor,1 )
         setIsLoggedIn(checkCookie('is_logged_in'))
 
 
@@ -31,12 +34,12 @@ function login(){
 }
 
 
-
-    useEffect(()=>{
-        if (IsLoggedIn) {
-            window.location.href = 'http://localhost:3000/'; // redirect home
-            }
-}, [IsLoggedIn])
+//
+//     useEffect(()=>{
+//         if (IsLoggedIn) {
+//             window.location.href = 'http://localhost:3000/'; // redirect home
+//             }
+// }, [IsLoggedIn])
 
     return (
         <div>
@@ -69,7 +72,11 @@ function login(){
                         </>)
                 } else  {
                     return (
-                         <div>"logged in "</div>
+                        <>
+                            <div>"logged in "</div>
+                            {window.location.href = 'http://localhost:3000/'}
+                        </>
+
 
                 )
                 }

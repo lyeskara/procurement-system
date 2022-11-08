@@ -24,9 +24,10 @@ app.get("/login",  (req, res) => {
     const email = req.query.email;
     const password = req.query.password;
     login.Login( email , password, returnData);
-
     function returnData(data){
-        res.json(data)}
+
+        res.json(data)
+        console.log(res.rows)}
 
 })
 
