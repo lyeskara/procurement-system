@@ -32,6 +32,13 @@ gap: 2rem;
     color: #0b6980;
 }
 
+#userName {
+    text-decoration: underline;
+    color: white;
+    font-family: 'Nunito', sans-serif;
+    cursor: default;
+}
+
 form {
 border: none;    
 background: #9cd3d8;

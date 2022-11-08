@@ -8,6 +8,7 @@ app.use(express.json())
 
 
 const  Us = require('./serverRouting/GetAll');
+const login = require("./serverRouting/LogAuth");
 
 app.get('/Users',Us.Users);
 app.get('/Users/:id',Us.User);
@@ -29,6 +30,6 @@ app.get("/login",  (req, res) => {
 
 })
 
-app.listen(5000, ()=> {
+app.listen(8000, ()=> {
     console.log('backend working')
 })

@@ -1,43 +1,10 @@
-import React from 'react'
+import {React} from 'react'
 import { useState,useEffect } from 'react'
 import '../componentCSS/login.css'
 import axios from 'axios';
 import { useNavigate } from "react-router-dom";
-import { redirect } from "react-router-dom";
+import {setCookie, checkCookie, removeCookie, getUserNameCookie} from "../routes/CookieFunction";
 
-
-
-function setCookie(cname, cvalue, exdays) {
-    const d = new Date();
-    d.setTime(d.getTime() + (exdays*24*60*60*1000));
-    let expires = "expires="+ d.toUTCString();
-    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
-}
-
-function checkCookie(name) {
-    var match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
-    if (match) {
-        console.log(match[2]);
-        return true;
-    }
-    else{
-        console.log('Cookie not found');
-        return false;
-    }
-}
-//checkCookie('is_logged_in')
-
-function removeCookie(name)
-{
-    var match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
-    if (match) {
-        document.cookie = name + "=" +
-            ";expires=Thu, 01 Jan 1970 00:00:01 GMT";
-    }
-    else{
-        console.log('Cookie already removed.');
-    }
-}
 
 function Login() {
 
@@ -48,14 +15,14 @@ function Login() {
 
 
 function login(){
-    const  url = "http://localhost:5000/login/";
+    const  url = "http://localhost:8000/login/";
     axios.get(`${url}?email=${email}&password=${password}`).then((responce)=>{
 
     if (responce.data[0] === undefined){
         console.log('no')
     }else{
         console.log('Hello, ' + responce.data[0].user_name + '.')
-        setCookie('is_logged_in', true, 1)
+        setCookie('is_logged_in', responce.data[0].user_name, 1)
         setIsLoggedIn(checkCookie('is_logged_in'))
 
 
@@ -64,12 +31,9 @@ function login(){
 }
 
 
-console.log('line 64 isLoggedin: ' + checkCookie('is_logged_in'))
 
     useEffect(()=>{
         if (IsLoggedIn) {
-            //return navigate("/")
-
             window.location.href = 'http://localhost:3000/'; // redirect home
             }
 }, [IsLoggedIn])
@@ -91,6 +55,7 @@ console.log('line 64 isLoggedin: ' + checkCookie('is_logged_in'))
                                     }}
                                 />
                                 <label>Password:</label>
+
                                 <input
                                     type="password"
                                     onChange={(event) => {
@@ -105,6 +70,7 @@ console.log('line 64 isLoggedin: ' + checkCookie('is_logged_in'))
                 } else  {
                     return (
                          <div>"logged in "</div>
+
                 )
                 }
             })()}
@@ -117,3 +83,5 @@ console.log('line 64 isLoggedin: ' + checkCookie('is_logged_in'))
 
 
 export default Login
+export {checkCookie, removeCookie}
+
