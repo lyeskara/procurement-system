@@ -11,7 +11,7 @@ The goal of this project is to develop a procurement system which automates mate
 * Raphael Leyo
 * Radwan Baba - Radwanbaba13
 * Lyes Kara- lyeskara
-* Brahim Hamid oudjana
+* Brahim Hamid oudjana - brahimho
 
 ## Tecnologies and Tools:
 
