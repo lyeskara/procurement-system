@@ -19,6 +19,14 @@ app.get('/supplier/:id',Us.supplier);
 app.get('/order',Us.Orders);
 app.get('/order/:id',Us.order);
 
+app.get('/quotations', (req, res) => {
+    quotation.Quotation(returnData)
+
+    function returnData(data){
+        res.json(data)
+        console.log(res.rows)
+    }
+} )
 
 app.get("/login",  (req, res) => {
     const email = req.query.email;

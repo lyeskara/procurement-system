@@ -2,7 +2,7 @@ import React from 'react';
 import {
     Routes,
     Route,
-  } from "react-router-dom";
+} from "react-router-dom";
 
 import Nav from './components/Nav';
 import Header from "./components/Header"
@@ -21,25 +21,27 @@ import Cart from "./routes/Cart"
 import User from './tables/User';
 import Order from './tables/Order';
 import Supplier from './tables/Supplier';
+import Quotations from "./routes/Quotations";
 
-const App = ()=>{
-    return (   
-       <>
-         <Nav/> 
-         <Header/>
-         <Routes>
-            <Route path ="/" element={<Home/>}  />
-            <Route path ="/About" element={<About/>}  />
-            <Route path ="/inventory" element={<Inventory/>}  />
-            <Route path ="/login" element={<Login/>}  />
-            <Route path ="/orders" element={<Order/>}  />
-            <Route path ="/users" element={<User/>}  />
-            <Route path ="/suppliers" element={<Supplier/>}  />
-            <Route path='/product' element={<Product/>}/>
-            <Route path='/cart' element={<Cart/>}/>
-         </Routes>
- </>
-    
+const App = () => {
+    return (
+        <>
+            <Nav/>
+            <Header/>
+            <Routes>
+                <Route path="/" element={<Home/>}/>
+                <Route path="/About" element={<About/>}/>
+                <Route path="/inventory" element={<Inventory/>}/>
+                <Route path="/login" element={<Login/>}/>
+                <Route path="/orders" element={<Order/>}/>
+                <Route path="/users" element={<User/>}/>
+                <Route path="/suppliers" element={<Supplier/>}/>
+                <Route path='/product' element={<Product/>}/>
+                <Route path='/cart' element={<Cart/>}/>
+                <Route path="/quotations" element={<Quotations/>}/>
+            </Routes>
+        </>
+
     )
 }
 
