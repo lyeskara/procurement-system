@@ -21,7 +21,7 @@ The goal of this project is to develop a procurement system which automates mate
 * CSS3/Bootstrap
 * Postgres
 
-##Usage of the Project Code:
+## Usage of the Project Code:
 * Install npm on your computer
 -> make sure you have all the dependencies installed and up to date
 * Open the terminal in the "project" file
