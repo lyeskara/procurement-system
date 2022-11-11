@@ -1,5 +1,10 @@
 .home {
     display: flex;
+    background: white;
+}
+
+a {
+    text-decoration: none;
 }
 
 .productContainer {
