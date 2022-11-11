@@ -8,7 +8,7 @@ The goal of this project is to develop a procurement system which automates mate
 * Thamina Akther- t-akther
 * Tuan Anh Pham - TuanAnh-P
 * Hugo Chauschard - hugochsd
-* Raphael Leyo
+* Raphael Leyo - Rat-fi
 * Radwan Baba - Radwanbaba13
 * Lyes Kara- lyeskara
 * Brahim Hamid oudjana - brahimho
