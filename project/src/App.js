@@ -21,7 +21,7 @@ import Cart from "./routes/Cart"
 import User from './tables/User';
 import Order from './tables/Order';
 import Supplier from './tables/Supplier';
-import Quotations from "./routes/Quotations";
+import Quotations from "./tables/Quotations";
 
 const App = () => {
     return (
