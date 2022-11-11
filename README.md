@@ -21,6 +21,13 @@ The goal of this project is to develop a procurement system which automates mate
 * CSS3/Bootstrap
 * Postgres
 
-
+##Usage of the Project Code:
+* Install npm on your computer
+-> make sure you have all the dependencies installed and up to date
+* Open the terminal in the "project" file
+* Install node modules by typing "npm install"
+* Check if a node_modules file has been created
+* Run the website by typing "npm start"
+* Open http://localhost:3000/
 
 
