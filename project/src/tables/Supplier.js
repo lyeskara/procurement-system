@@ -13,7 +13,7 @@ function Supplier() {
   return (
     
   <div>
-  <h1 id='hh'>Users Table</h1>
+  <h1 id='hh'>Supplier Table</h1>
 
    <table>
    <thead>

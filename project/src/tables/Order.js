@@ -15,7 +15,7 @@ function Order() {
     <div>
     
   <div>
-  <h1 id='hh'>Users Table</h1>
+  <h1 id='hh'>Order's Table</h1>
 
    <table>
    <thead>
