@@ -74,7 +74,7 @@ function login(){
                     return (
                         <>
                             <div>"logged in "</div>
-                            {window.location.href = 'http://localhost:3000/'}
+                            {window.location.href = 'http://localhost:3000/inventory'}
                         </>
 
 
