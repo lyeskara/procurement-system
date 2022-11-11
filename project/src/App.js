@@ -24,7 +24,7 @@ import About from './routes/About';
 
 import Product from "./routes/Product"
 import Cart from "./routes/Cart"
-
+import Quotations from "./tables/Quotations";
 import User from './tables/User';
 import Db_pop from './routes/populate_db';
 import Order from './tables/Order';
@@ -77,6 +77,7 @@ const App = ()=>{
                   <Route path ="/orders" element={<Order/>}  />
                   <Route path ="/users" element={<User/>}  />
                   <Route path ="/suppliers" element={<Supplier/>}  />
+                  <Route path="/quotations" element={<Quotations/>}/>
               </Route>
   
               <Route element={<AppLayout2/>}>
