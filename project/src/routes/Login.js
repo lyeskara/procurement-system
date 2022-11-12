@@ -15,7 +15,7 @@ function Login() {
 
 
 function login(){
-    const  url = "http://localhost:5000/login/";
+    const  url = "http://localhost:8000/login/";
     axios.get(`${url}?email=${email}&password=${password}`).then((responce)=>{
 
     if (responce.data[0] === undefined){
@@ -25,14 +25,16 @@ function login(){
         console.log('Hello, ' + responce.data[0] + '.')
 
         setCookie('is_logged_in', responce.data[0].user_name, 1)
-        setCookie('supervisor',responce.data[0].supervisor,1 )
+        if (responce.data[0].supervisor == true){
+            setCookie('supervisor',responce.data[0].supervisor,1 )
+
+        }
         setIsLoggedIn(checkCookie('is_logged_in'))
 
 
     }
   })
 }
-
 
 //
 //     useEffect(()=>{
