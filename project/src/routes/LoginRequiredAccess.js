@@ -10,13 +10,21 @@ function LoginRequiredAccess() {
                 if (!checkCookie('is_logged_in')) {
                     return (<div>logged out</div>)
                 } else  {
-                    return (
-                        <div>logged in</div>
-                    )
+                    if (checkCookie('supervisor')){
+                        return (
+                            <div>logged in as a supervisor</div>
+                        )
+                    }
+                    else {
+                        return(
+                            <div>logged in as a user</div>
+                        )
+
+                    }
                 }
             })()}
         </>
     )
 }
 
-export default Template
+export default LoginRequiredAccess
