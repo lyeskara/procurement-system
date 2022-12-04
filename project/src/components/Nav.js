@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import '../componentCSS/navbar.css'
 import { BsSearch } from "react-icons/bs";
 import { useState,useEffect } from 'react'
@@ -28,6 +28,7 @@ function logout(){
         } else  {
           return (
               <>
+                <li> <Link to="/inventory" id='link'> Inventory </Link></li>
                 <li> <Link   id='userName'>{getUserNameCookie('is_logged_in').toUpperCase()}</Link> </li>
                 <li> <Link onClick={logout} id='link'> Logout </Link></li>
               </>
