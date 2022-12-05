@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Button, Card } from "react-bootstrap";
 import axios from "axios";
-import createOrder from "./CreateOrder";
+import { createOrder } from "./CreateOrder";
 import "../tables.css/users.css";
 
 function ProductContainer() {
