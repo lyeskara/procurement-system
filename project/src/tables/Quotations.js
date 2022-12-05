@@ -5,11 +5,20 @@ import axios from 'axios';
 function Quotation() {
 
 
-    const [data,setData] = useState([]);
+    const approve = () => {
+
+    }
+    const deny = () => {
+
+
+    }
+    const [data, setData] = useState([]);
     useEffect(
-        ()=>{
+        () => {
             axios.get("http://localhost:5000/quotations")
-                .then((Response)=> { setData(Response.data)  })
+                .then((Response) => {
+                    setData(Response.data)
+                })
         }, []
     );
     return (
@@ -21,6 +30,7 @@ function Quotation() {
                 <table>
                     <thead>
                     <tr>
+
                         <th>item</th>
                         <th>supplier</th>
                         <th>quantity</th>
@@ -29,17 +39,19 @@ function Quotation() {
                     </thead>
                     <tbody>
                     {
-                        data.map((order)=>{
-                            return(
+                        data.map((order) => {
+                            return (
                                 <>
                                     <tr key={order.id}>
                                         <td>{order.item_name}</td>
                                         <td>{order.supplier_name}</td>
                                         <td>{order.quantity}</td>
                                         <td>{(order.fulfillment).toString()}</td>
+                                        <button OnClick={approve}>Approve</button>
+                                        <button OnClick={deny}>Deny</button>
                                     </tr>
                                 </>
-                            )
+                        )
                         })
                     }
                     </tbody>

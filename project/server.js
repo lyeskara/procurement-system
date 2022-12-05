@@ -7,6 +7,7 @@ app.use(express.json());
 
 const Us = require("./serverRouting/GetAll");
 const login = require("./serverRouting/LogAuth");
+const quotation = require ("./serverRouting/getQuotations");
 
 app.get("/Users", Us.Users);
 app.get("/Users/:id", Us.User);
@@ -21,6 +22,8 @@ app.get("/item", Us.items);
 app.get("/item/:id", Us.item);
 
 app.get("/item_supplier", Us.itemSupplier);
+
+app.get('/quotations', quotation.Quotation);
 
 app.get("/login", (req, res) => {
   const email = req.query.email;
