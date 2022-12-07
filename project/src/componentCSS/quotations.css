@@ -1,0 +1,35 @@
+.quotation-table {
+    /*border-collapse: collapse;*/
+    margin: 25px 150px;
+    /*font-size: 0.9em;*/
+}
+
+.approve-button{
+    font-family: "Roboto", sans-serif;
+    font-size: 15px;
+    font-weight: bold;
+    background: #45b247;
+    border-color: #45b247;
+    width: 110px;
+    padding: 10px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #ffffff;
+    border-radius: 10px ;
+    margin: 10px;
+
+}
+
+.deny-button{
+    font-family: "Roboto", sans-serif;
+    font-size: 15px;
+    font-weight: bold;
+    background: #bd3d3d;
+    border-color: #bd3d3d;
+    width: 110px;
+    padding: 10px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #ffffff;
+    border-radius: 10px ;
+}

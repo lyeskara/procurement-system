@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import '../componentCSS/quotations.css'
 import { denyOrder } from "../components/CreateOrder";
 import { approveOrder } from "../components/CreateOrder";
 function Quotation() {
@@ -13,8 +14,7 @@ function Quotation() {
     <div>
       <div>
         <h1 id="hh">Quotations waiting for Approval</h1>
-
-        <table>
+        <table class="quotation-table">
           <thead>
             <tr>
               <th>item</th>
@@ -32,14 +32,14 @@ function Quotation() {
                     <td>{order.supplier_name}</td>
                     <td>{order.quantity}</td>
                     <td>{order.fulfillment.toString()}</td>
-                    <button
+                    <button class={"approve-button"}
                       onClick={() => {
                         approveOrder(order.id);
                       }}
                     >
                       Approve
                     </button>
-                    <button
+                    <button class={"deny-button"}
                       onClick={() => {
                         denyOrder(order.id);
                       }}
@@ -54,6 +54,7 @@ function Quotation() {
         </table>
       </div>
     </div>
+
   );
 }
 
