@@ -1,5 +1,26 @@
 const client = require("../model/postgresdb");
 
+
+const itemsAscendingPrice = (req, res) => {
+  client.query(`Select * from items ORDER BY item_price ASC`, (err, result) => {
+    if (!err) {
+      res.send(result.rows);
+      // console.log(("ascendingdata:"));
+      // console.log(result);
+    }
+  });
+};
+
+const itemsDescendingPrice = (req, res) => {
+  client.query(`Select * from items ORDER BY item_price DESC`, (err, result) => {
+    if (!err) {
+      res.send(result.rows);
+      // console.log(("descendingdata:"));
+      // console.log(result);
+    }
+  });
+};
+
 // get all items
 const items = (req, res) => {
   client.query(`SELECT * from items`, (err, result) => {
@@ -122,4 +143,6 @@ module.exports = {
   items,
   item,
   itemSupplier,
+  itemsAscendingPrice,
+  itemsDescendingPrice,
 };
