@@ -37,6 +37,7 @@ app.get("/login", (req, res) => {
 
 app.get("/item_price_asc", Us.itemsAscendingPrice);
 app.get("/item_price_desc", Us.itemsDescendingPrice);
+app.get("/item_rating/:rating/:ordering", Us.itemsByRating);
 
 app.listen(5000, () => {
   console.log("backend working");

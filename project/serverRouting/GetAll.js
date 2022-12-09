@@ -21,6 +21,16 @@ const itemsDescendingPrice = (req, res) => {
   });
 };
 
+const itemsByRating = (req, res) => {
+  client.query(`Select * from items Where rating = ${req.params.rating} ORDER BY item_price ${req.params.ordering}`, (err, result) => {
+    if (!err) {
+      res.send(result.rows);
+      // console.log(("ordered with rating filter"));
+      // console.log(result);
+    }
+  });
+};
+
 // get all items
 const items = (req, res) => {
   client.query(`SELECT * from items`, (err, result) => {
@@ -145,4 +155,5 @@ module.exports = {
   itemSupplier,
   itemsAscendingPrice,
   itemsDescendingPrice,
+  itemsByRating,
 };
