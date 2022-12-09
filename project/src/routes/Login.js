@@ -51,24 +51,31 @@ function login(){
 
                         <>
 
-                            <div className="loginContainer">
-                                <label>Email:</label>
+                            <div className="loginContainer gradient-custom">
+                              <div class="form-outline form-white mb-4" style={{width:"50%" ,  margin: "auto", width: "50%",padding: "10px"}}>
+                                  <label class="form-label">Email:</label>
                                 <input
+                                class="form-control form-control-lg"
                                     type="text"
                                     onChange={(event) => {
                                         setEmail(event.target.value);
                                     }}
                                 />
-                                <label>Password:</label>
+                                </div>
+                                <div class="form-outline form-white mb-4" style={{width:"50%" ,  margin: "auto", width: "50%",padding: "10px"}}>
+
+                                <label class="form-label">Password:</label>
 
                                 <input
+                                 class="form-control form-control-lg"
                                     type="password"
                                     onChange={(event) => {
                                         setPassword(event.target.value);
                                     }}
                                 />
+                                </div>
 
-                                <button onClick={login}> Login </button>
+                                <button class="btn btn-outline-light btn-lg px-5"  style={{ marginLeft:"42%"}} onClick={login}> Login </button>
                             </div>
 
                         </>)
@@ -76,7 +83,7 @@ function login(){
                     return (
                         <>
                             <div>"logged in "</div>
-                            {window.location.href = 'http://localhost:3000/inventory'}
+                            {window.location.href = 'http://localhost:3000/'}
                         </>
 
 

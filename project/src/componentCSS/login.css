@@ -9,7 +9,16 @@
     font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
     background-color: #f8f9fd;
   }
-  
+  .gradient-custom {
+    /* fallback for old browsers */
+    background:  #00474e;
+    
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: -webkit-linear-gradient(to right,  #00474e,  #00474e);
+    height: 100vh;
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: linear-gradient(to right,  #00474e,  #00474e)
+    }
   input[type="text"],
   input[type="password"] {
     height: 25px;
