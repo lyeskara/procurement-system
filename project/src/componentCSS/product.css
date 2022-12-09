@@ -1,3 +1,6 @@
+
+
+
 .home {
     display: flex;
     background-color: white;
@@ -25,14 +28,14 @@
 }
 
 .filters {
-    background-color: #343a40;
+    background-color: #00474e;
     color: white;
     padding: 20px;
     display: flex;
     flex-direction: column;
     width: 20%;
-    margin: 10px;
-    height: 86vh;
+    margin: 0;
+    height: inherit;
 }
 
 .filters > span {
