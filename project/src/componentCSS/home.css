@@ -12,24 +12,24 @@
     width: 500px;
     background: #45878d;
     outline: #00474e solid;
-  
+
 }
 #sideHeader{
-  font-size: 2.5rem;
+  font-size: 2rem;
   padding-bottom: 90px;
   text-align: center;
   font-weight: bold;
   color: #2e2e2e;
 }
 
-#sideLinks{
-  padding: 15px;
-  font-size: 2rem;
-  color: #2e2e2e;
-  letter-spacing: 0.2rem;
-  height: 10vh;
-  font-weight: bold;
-  text-decoration: none;
+#sideLinks {
+    padding: 0px;
+    font-size: 1.5rem;
+    color: #2e2e2e;
+    letter-spacing: 0.2rem;
+    height: 10vh;
+    font-weight: bold;
+    text-decoration: none;
 }
 
 #sideLinks:hover{
@@ -38,9 +38,12 @@
 
 .intro{
   padding: 13px;
-  font-size: 1.75rem;
+  font-size: 1.6rem;
     height: 80vh;
-    text-align: Left;
-
+    text-align: center;
+    margin-top: 15%;
+    margin-left: 5%;
+    margin-right: 5%;
+    font-weight: initial;
 }
 
