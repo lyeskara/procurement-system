@@ -12,12 +12,11 @@ function ProductContainer() {
     productDispatch
   } = CartState();
 
-  if (1) {
+  if (0) {
     console.log("Filter are called from Products:")
     console.log(byStock, byFastDelivery, sort, byRating, searchQuery);
   }
 
-  const [sortLocal, setSortLocal] = useState(0);
   const [data, setData] = useState([]);
   const [data2, setData2] = useState([]);
 
@@ -28,13 +27,6 @@ function ProductContainer() {
   useEffect(() => {
 
     if (typeof sort !== 'undefined') {
-
-      setSortLocal(sort);
-
-      console.log(("Sort is not undefined"));
-      console.log(typeof sort)
-      console.log(sort);
-
       if (sort === 1) {
         axios.get("http://localhost:5000/item_price_asc").then((Response) => {
           setData(Response.data);
@@ -51,7 +43,6 @@ function ProductContainer() {
         setData(Response.data);
       });
     }
-
   // }, [data, sort]);
 }, [sort]);
 
