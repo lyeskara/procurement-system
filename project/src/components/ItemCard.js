@@ -3,8 +3,21 @@ import { Button, Card } from "react-bootstrap";
 import axios from "axios";
 import { createOrder } from "./CreateOrder";
 import "../tables.css/users.css";
+import {CartState} from "../context/Context";
 
 function ProductContainer() {
+
+  const {
+    productState: {byStock, byFastDelivery, sort, byRating, searchQuery},
+    productDispatch
+  } = CartState();
+
+  if (1) {
+    console.log("Filter are called from Products:")
+    console.log(byStock, byFastDelivery, sort, byRating, searchQuery);
+  }
+
+  const [sortLocal, setSortLocal] = useState(0);
   const [data, setData] = useState([]);
   const [data2, setData2] = useState([]);
 
@@ -13,10 +26,34 @@ function ProductContainer() {
   var [fulfillment, setFulfillment] = useState("");
 
   useEffect(() => {
-    axios.get("http://localhost:5000/item").then((Response) => {
-      setData(Response.data);
-    });
-  }, []);
+
+    if (typeof sort !== 'undefined') {
+
+      setSortLocal(sort);
+
+      console.log(("Sort is not undefined"));
+      console.log(typeof sort)
+      console.log(sort);
+
+      if (sort === 1) {
+        axios.get("http://localhost:5000/item_price_asc").then((Response) => {
+          setData(Response.data);
+          console.log(("ascendingdata:"));
+        });
+      } else if (sort === 2) {
+        axios.get("http://localhost:5000/item_price_desc").then((Response) => {
+          setData(Response.data);
+          console.log(("descendingdata:"));
+        });
+      }
+    } else {
+      axios.get("http://localhost:5000/item").then((Response) => {
+        setData(Response.data);
+      });
+    }
+
+  // }, [data, sort]);
+}, [sort]);
 
   useEffect(() => {
     axios.get("http://localhost:5000/item_supplier").then((Response) => {

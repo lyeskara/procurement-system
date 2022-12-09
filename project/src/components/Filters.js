@@ -25,10 +25,10 @@ const Filters = () => {
                 onChange={(i) =>
                     productDispatch({
                         type: "SORT_BY_PRICE",
-                        payload: "lowToHigh"
+                        payload: 1
                     })
                 }
-                checked={sort === "lowToHigh" ? true : false}
+                checked={sort === 1}
             />
         </span>
         <span>
@@ -41,10 +41,10 @@ const Filters = () => {
                 onChange={(i) =>
                     productDispatch({
                         type: "SORT_BY_PRICE",
-                        payload: "highToLow"
+                        payload: 2
                     })
                 }
-                checked={sort === "highToLow" ? true : false}
+                checked={sort === 2}
             />
         </span>
         <span>
