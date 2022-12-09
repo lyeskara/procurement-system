@@ -1,21 +1,20 @@
-import React from 'react'
-import { CartState } from '../context/Context';
-import Filters from "../components/Filters"
-import SingleProduct from '../components/SingleProduct';
+import React from "react";
+import { CartState } from "../context/Context";
+import Filters from "../components/Filters";
+import ProductContainer from "../components/ItemCard";
 import "../componentCSS/product.css";
 
 const Product = () => {
-
   const {
-    state:{products},
-    productState: {sort, byStock, byFastDelivery, byRating, searchQuery},
+    state: { products },
+    productState: { sort, byStock, byFastDelivery, byRating, searchQuery },
   } = CartState();
 
   const transformProducts = () => {
     let sortedProducts = products;
 
     if (sort) {
-      sortedProducts = sortedProducts.sort((a,b) => 
+      sortedProducts = sortedProducts.sort((a, b) =>
         sort === "lowToHigh" ? a.price - b.price : b.price - a.price
       );
     }
@@ -35,24 +34,25 @@ const Product = () => {
     }
 
     if (searchQuery) {
-      sortedProducts = sortedProducts.filter(
-        (prod) => prod.name.toLowerCase().includes(searchQuery)
+      sortedProducts = sortedProducts.filter((prod) =>
+        prod.name.toLowerCase().includes(searchQuery)
       );
     }
 
     return sortedProducts;
-  }
+  };
 
-  return <div className='home'>
-    <Filters/>
-    <div className='productContainer'>
-      {
-        transformProducts().map((prod) => {
+  return (
+    <div className="home">
+      <Filters />
+      <div className="productContainer">
+        <ProductContainer />
+        {/*transformProducts().map((prod) => {
           return <SingleProduct prod={prod} key={prod.id} />;
-        })
-      }
+        })*/}
+      </div>
     </div>
-  </div>;
+  );
 };
 
-export default Product
+export default Product;

@@ -1,61 +1,105 @@
-const client = require("../model/postgresdb")
+const client = require("../model/postgresdb");
 
+// get all items
+const items = (req, res) => {
+  client.query(`SELECT * from items`, (err, result) => {
+    if (!err) {
+      res.send(result.rows);
+    }
+  });
+};
 
-// get all users 
+// get a selected item
+const item = (req, res) => {
+  client.query(
+    `SELECT * FROM items where id =${req.params.id}`,
+    (err, result) => {
+      if (!err) {
+        res.send(result.rows);
+      }
+    }
+  );
+};
 
-const Users =(req, res)=>{     
-        client.query(`SELECT * from users`,(err,result)=>{
-         if(!err) { res.send(result.rows) }
-         })
-        }
+// get all item-supplier duo
+const itemSupplier = (req, res) => {
+  client.query(`SELECT * from item_supplier`, (err, result) => {
+    if (!err) {
+      res.send(result.rows);
+    }
+  });
+};
+
+// get all users
+
+const Users = (req, res) => {
+  client.query(`SELECT * from users`, (err, result) => {
+    if (!err) {
+      res.send(result.rows);
+    }
+  });
+};
 
 // get a selected user
 
-const User = (req,res)=>{
-        client.query(`SELECT * FROM USERS where id =${req.params.id}`, (err,result)=>{
-           if(!err){
-                res.send(result.rows)
-           }
-        })
-        
-}
+const User = (req, res) => {
+  client.query(
+    `SELECT * FROM USERS where id =${req.params.id}`,
+    (err, result) => {
+      if (!err) {
+        res.send(result.rows);
+      } else {
+        console.log("Success");
+      }
+    }
+  );
+};
 
-// get all suppliers 
-const suppliers =(req, res)=>{     
-        client.query(`SELECT * from supplier`,(err,result)=>{
-         if(!err) { res.send(result.rows) }
-         })
-        }
+// get all suppliers
+const suppliers = (req, res) => {
+  client.query(`SELECT * from supplier`, (err, result) => {
+    if (!err) {
+      res.send(result.rows);
+    }
+  });
+};
 
 // get a selected supplier
 
-const supplier = (req,res)=>{
-        client.query(`SELECT * FROM Supplier where id =${req.params.id}`, (err,result)=>{
-           if(!err){
-                res.send(result.rows)
-           }
-        })
-        
-}
+const supplier = (req, res) => {
+  client.query(
+    `SELECT * FROM Supplier where id =${req.params.id}`,
+    (err, result) => {
+      if (!err) {
+        res.send(result.rows);
+      }
+    }
+  );
+};
 
-const Orders =(req, res)=>{     
-        client.query(`SELECT * from orders`,(err,result)=>{
-         if(!err) { res.send(result.rows) }
-         })
-        }
+const Orders = (req, res) => {
+  client.query(`SELECT * from orders`, (err, result) => {
+    if (!err) {
+      res.send(result.rows);
+      console.log("success");
+    }
+  });
+};
 
 // get a selected user
 
-const order = (req,res)=>{
-        client.query(`SELECT * FROM orders where id =${req.params.id}`, (err,result)=>{
-           if(!err){
-                res.send(result.rows)
-           }
-        })
-        
-}
+const order = (req, res) => {
+  client.query(
+    `SELECT * FROM orders where id =${req.params.id}`,
+    (err, result) => {
+      if (!err) {
+        res.send(result.rows);
+      }
+    }
+  );
+};
 
-// // create a user 
+// // create a user
 
 //  const Create =  (req,res)=>{
 //         const user =req.body;
@@ -67,9 +111,15 @@ const order = (req,res)=>{
 //                     else{ console.log(err.message) }
 //                 })
 //  }
-      
-    
 
-
-module.exports = {Users,User,suppliers,supplier,order,Orders};
-
+module.exports = {
+  Users,
+  User,
+  suppliers,
+  supplier,
+  order,
+  Orders,
+  items,
+  item,
+  itemSupplier,
+};

@@ -1,15 +1,46 @@
 .home{
-    background: #45878d;
+    background: #ffffff;
       margin: 0;
       position: absolute;
       width: 100%;
         }
 
 .header{
-    font-size: 2.5rem;
     letter-spacing: 0.5rem;
-    text-align: center;
-    height: 80vh;
+    text-align: left;
+    height: 100vh;
+    width: 500px;
+    background: #45878d;
+    outline: #00474e solid;
   
+}
+#sideHeader{
+  font-size: 2.5rem;
+  padding-bottom: 90px;
+  text-align: center;
+  font-weight: bold;
+  color: #2e2e2e;
+}
+
+#sideLinks{
+  padding: 15px;
+  font-size: 2rem;
+  color: #2e2e2e;
+  letter-spacing: 0.2rem;
+  height: 10vh;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+#sideLinks:hover{
+  color: #525252;
+}
+
+.intro{
+  padding: 13px;
+  font-size: 1.75rem;
+    height: 80vh;
+    text-align: Left;
+
 }
 
