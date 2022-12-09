@@ -20,12 +20,15 @@
   text-align: center;
   font-weight: bold;
   color: #2e2e2e;
+    /*color: white;*/
+
 }
 
 #sideLinks {
     padding: 0px;
     font-size: 1.5rem;
     color: #2e2e2e;
+    /*color: white;*/
     letter-spacing: 0.2rem;
     height: 10vh;
     font-weight: bold;
@@ -41,9 +44,29 @@
   font-size: 1.6rem;
     height: 80vh;
     text-align: center;
-    margin-top: 15%;
+    margin-top: 10%;
     margin-left: 5%;
     margin-right: 5%;
     font-weight: initial;
 }
 
+.AppTitle{
+    text-decoration: underline;
+    /*padding: 13px;*/
+    /*font-size: 1.6rem;*/
+    /*height: 80vh;*/
+    /*text-align: center;*/
+    /*text-decoration-color: ;*/
+    /*margin-top: 15%;*/
+    /*margin-left: 5%;*/
+    /*margin-right: 5%;*/
+    /*font-weight: initial;*/
+}
+
+#AppDescription{
+    margin-top: 5%;
+}
+
+#firstLink{
+    margin-top: 16%;
+}

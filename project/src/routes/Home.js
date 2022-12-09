@@ -5,8 +5,8 @@ function Home() {
   return (
     <section className="home">
       <div className="header">
-        <h2 id="sideHeader">Welcome to Procument </h2>
-        <ul>
+        {/*<h2 id="sideHeader">Welcome to Procument </h2>*/}
+        <ul id="firstLink">
           {" "}
           <Link to="/inventory" id="sideLinks">
             Inventory
@@ -25,12 +25,15 @@ function Home() {
           </Link>
         </ul>
       </div>
+
       <div class="intro">
-        The goal of this project is to develop a procurement system which
+        <h1 id="AppTitle">Welcome to Procument</h1>
+        <p id="AppDescription"> The goal of this project is to develop a procurement system which
         automates material acquisition of a business using SQL, React.js and
         express. <br />
         <br />
         Please Login to access the Inventory Managment System.
+        </p>
       </div>
     </section>
   );
