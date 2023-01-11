@@ -20,6 +20,7 @@ The goal of this project is to develop a procurement system which automates mate
 * HTML5
 * CSS3/Bootstrap
 * Postgres
+* React
 
 ## Usage of the Project Code:
 * Install npm on your computer
